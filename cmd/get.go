@@ -5,7 +5,7 @@ import (
   "fmt"
 
   "github.com/spf13/cobra"
-  "github.com/ashwanthkumar/wasp-go/util"
+  "github.com/ashwanthkumar/wasp-cli/util"
 )
 
 var GetCommand = &cobra.Command{

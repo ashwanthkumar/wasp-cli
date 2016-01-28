@@ -4,8 +4,8 @@ import (
   "errors"
 
   "github.com/spf13/cobra"
-  "github.com/ashwanthkumar/wasp-go/util"
-  "github.com/ashwanthkumar/wasp-go/config"
+  "github.com/ashwanthkumar/wasp-cli/util"
+  "github.com/ashwanthkumar/wasp-cli/config"
 )
 
 var PutCommand = &cobra.Command{

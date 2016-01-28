@@ -4,7 +4,7 @@ import (
   "os"
   "fmt"
 
-  "github.com/ashwanthkumar/wasp-go/cmd"
+  "github.com/ashwanthkumar/wasp-cli/cmd"
 )
 
 func main() {

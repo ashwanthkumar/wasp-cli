@@ -5,8 +5,8 @@ import (
   "os"
 
   "github.com/spf13/cobra"
-  "github.com/ashwanthkumar/wasp-go/config"
-  "github.com/ashwanthkumar/wasp-go/client"
+  "github.com/ashwanthkumar/wasp-cli/config"
+  "github.com/ashwanthkumar/wasp-cli/client"
 )
 
 var wasp = client.WASP {

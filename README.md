@@ -5,8 +5,8 @@ wasp-go is a command line utility for WASP. You can get / browse WASP configurat
 You need to have golang setup in your system to build it locally. 
 
 ```bash
-$ git clone https://github.com/ashwanthkumar/wasp-go
-$ cd wasp-go
+$ git clone https://github.com/ashwanthkumar/wasp-cli
+$ cd wasp-cli
 $ make setup
 $ make build
 ```
