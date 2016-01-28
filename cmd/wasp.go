@@ -32,3 +32,7 @@ func AttachHandler(handler CommandHandler) func (*cobra.Command, []string) {
     }
   }
 }
+
+func init() {
+  log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+}

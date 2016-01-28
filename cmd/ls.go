@@ -17,7 +17,6 @@ var LsCommand = &cobra.Command{
 }
 
 func init() {
-  log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
   WaspCommand.AddCommand(LsCommand)
 }
 
