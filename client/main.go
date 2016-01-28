@@ -46,6 +46,10 @@ func (w *WASP) Put(path string, config string) (string, error) {
     End())
 }
 
+func (w *WASP) SetToken(token string) {
+  w.AuthToken = token
+}
+
 func handle(response gorequest.Response, body string, errs []error) (string, error) {
   if(response.StatusCode != 200) {
     var errorResponse Error

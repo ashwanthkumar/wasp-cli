@@ -5,6 +5,7 @@ import (
 
   "github.com/spf13/cobra"
   "github.com/ashwanthkumar/wasp-go/util"
+  "github.com/ashwanthkumar/wasp-go/config"
 )
 
 var PutCommand = &cobra.Command{
@@ -29,6 +30,7 @@ func prepareFlags() {
 }
 
 func performPut(args []string) error {
+  wasp.SetToken(config.GetAuthToken())
   if(len(args) != 2 && !stdIn) {
     return errors.New("put takes exactly 2 arguments")
   }
