@@ -11,6 +11,8 @@ $ make setup
 $ make build
 ```
 
+If you're not my type, you can instead [download a binary](https://github.com/ashwanthkumar/wasp-cli/releases) directly from releases. 
+
 ## Configuration file
 You need to create a file under `~/.indix/wasp.json` which has the following contents
 ```json
