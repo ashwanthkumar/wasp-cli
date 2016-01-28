@@ -11,6 +11,7 @@ import (
 
 var wasp = client.WASP {
   Url: config.GetWASPHost(),
+  AuthToken: config.GetAuthToken(),
 }
 
 // Main command for Cobra.

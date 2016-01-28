@@ -1,6 +1,7 @@
 package config
 
 import (
+  "log"
   "fmt"
   "github.com/spf13/viper"
 )
@@ -19,5 +20,17 @@ func init() {
 }
 
 func GetWASPHost() string {
+  notNullConfiguration("wasp.host")
   return c.GetString("wasp.host")
+}
+
+func GetAuthToken() string {
+  notNullConfiguration("wasp.token")
+  return c.GetString("wasp.token")
+}
+
+func notNullConfiguration(key string) {
+  if c.GetString(key) == "" {
+    log.Fatal(key + " configuration is not found in " + c.ConfigFileUsed())
+  }
 }

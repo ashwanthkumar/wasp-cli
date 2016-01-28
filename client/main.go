@@ -10,6 +10,7 @@ import (
 
 type WASP struct {
   Url string
+  AuthToken string
 }
 
 var Request = gorequest.New()
