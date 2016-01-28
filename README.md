@@ -1,5 +1,5 @@
 # WASP CLI
-wasp-go is a command line utility for WASP. You can get / browse WASP configurations directly from your terminal without any complicated `cURL` commands. 
+wasp-cli is a command line utility for WASP. You can get / browse WASP configurations directly from your terminal without any complicated `cURL` commands. 
 
 ## Build
 You need to have golang setup in your system to build it locally. 
