@@ -71,3 +71,9 @@ If you're running deletes in a batch mode (strictly not advisable),
 ```
 $ wasp rmr foo.bar.baz --yes
 ```
+
+### Tips
+If you've `jq` installed you can prettify the Configuration outputs much more by just piping the output to jq. Don't use this if you're writing it to a file.
+```
+$ wasp get production.foo.bar.baz | jq --color-output
+```
