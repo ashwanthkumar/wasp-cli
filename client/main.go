@@ -46,6 +46,16 @@ func (w *WASP) Put(path string, config string) (string, error) {
     End())
 }
 
+// Delete a configuration (it deletes recursively)
+func (w *WASP) Delete(path string) (string, error) {
+  return handle(Request.
+    Delete(w.Url + "/configuration").
+    Query("path=" + path).
+    Query("token=" + w.AuthToken).
+    Type("text").
+    End())
+}
+
 func (w *WASP) SetToken(token string) {
   w.AuthToken = token
 }
