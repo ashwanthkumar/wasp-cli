@@ -17,13 +17,14 @@ var RmrCommand = &cobra.Command{
 }
 
 func init() {
+  prepareFlagsForRmr()
   WaspCommand.AddCommand(RmrCommand)
 }
 
 var yes bool
 func prepareFlagsForRmr() {
   RmrCommand.PersistentFlags().BoolVarP(
-    &rawData, "yes", "y", false, "Don't prompt just delete it")
+    &yes, "yes", "y", false, "Don't prompt just delete it")
 }
 
 func performRmr(args []string) error {
