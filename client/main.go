@@ -36,6 +36,16 @@ func (w *WASP) List(basepath string) (string, error) {
     End())
 }
 
+func (w *WASP) Put(path string, config string) (string, error) {
+  return handle(Request.
+    Post(w.Url + "/configuration").
+    Query("path=" + path).
+    Query("token=" + w.AuthToken).
+    Type("text").
+    Send(config).
+    End())
+}
+
 func handle(response gorequest.Response, body string, errs []error) (string, error) {
   if(response.StatusCode != 200) {
     var errorResponse Error
