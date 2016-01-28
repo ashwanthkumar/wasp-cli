@@ -1,7 +1,7 @@
 package cmd
 
 import (
-  "strings"
+  "errors"
   "fmt"
 
   "github.com/spf13/cobra"
@@ -20,7 +20,10 @@ func init() {
 }
 
 func performGet(args []string) error {
-  path := strings.Join(args, " ")
+  if(len(args) > 1) {
+    return errors.New("get takes only 1 argument")
+  }
+  path := args[0]
   data, err := wasp.Get(path)
   if err == nil {
     var container interface{}

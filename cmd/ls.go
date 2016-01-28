@@ -1,9 +1,8 @@
 package cmd
 
 import (
-  "log"
   "fmt"
-  "strings"
+  "errors"
 
   "github.com/spf13/cobra"
   "github.com/ashwanthkumar/wasp-go/util"
@@ -21,9 +20,10 @@ func init() {
 }
 
 func performLS(args []string) error {
-  path := strings.Join(args, " ")
-  // log.Println("Using - " + wasp.Url)
-  // println("Getting path from - " + path)
+  if(len(args) > 1) {
+    return errors.New("ls takes only 1 argument")
+  }
+  path := args[0]
   data, err := wasp.List(path)
   if err == nil {
     var keys []string
