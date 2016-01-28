@@ -3,6 +3,14 @@ APPNAME = wasp
 build:
 	go build -o ${APPNAME} .
 
+build-linux:
+	GOOS=linux GOARCH=amd64 go build -ldflags "-s" -v -o ${APPNAME}-linux-amd64 .
+
+build-mac:
+	GOOS=darwin GOARCH=amd64 go build -ldflags "-s" -v -o ${APPNAME}-darwin-amd64 .
+
+build-all: build-mac build-linux
+
 all: setup
 	build
 	install
