@@ -12,8 +12,8 @@ import (
 
 var GenCommand = &cobra.Command{
   Use:   "gen <path> <tmpl_file>",
-  Short: "Generate go templates using WASP configurations",
-  Long:  `Generate go templates using WASP configurations`,
+  Short: "Generate files using Go templates from WASP configs",
+  Long:  `Generate files using Go templates from WASP configs`,
   Run: AttachHandler(performGen),
 }
 
