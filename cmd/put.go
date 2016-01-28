@@ -25,7 +25,7 @@ func prepareFlags() {
   PutCommand.PersistentFlags().BoolVarP(
     &rawData, "raw", "r", false, "Put the value as it without parsing it as JSON")
   PutCommand.PersistentFlags().BoolVarP(
-    &stdIn, "stdin", "-", false, "Read from STDIN instead of value from command line")
+    &stdIn, "stdin", "", false, "Read from STDIN instead of value from command line")
 }
 
 func performPut(args []string) error {
