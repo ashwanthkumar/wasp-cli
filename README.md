@@ -29,13 +29,14 @@ You can still make `ls` and `get` calls without the `token` config but the `put`
 ## Usage
 
 ```
-$ wasp -h
+$ wasp
 Command line client to WASP
 
 Usage:
   wasp [command]
 
 Available Commands:
+  gen         Generate files using Go templates from WASP configs
   get         Get the configuration in current path
   ls          List keys in the current path
   put         Put a value against a path
@@ -71,6 +72,21 @@ If you're running deletes in a batch mode (strictly not advisable),
 ```
 $ wasp rmr foo.bar.baz --yes
 ```
+
+### Generate Configuration files for your application from WASP Settings
+You can generate configuration files for your application based on the settings in WASP
+```
+// configuration.tmpl
+{
+ "wasp": {
+  "host": "{{ .wasp.host }}"
+ }
+}
+
+$ wasp gen dev.golang /path/to/configuration.tmpl > /path/to/config.json
+```
+
+We use the excellent [Go Templates](https://golang.org/pkg/text/template/) for rendering the files.
 
 ### Tips
 If you've `jq` installed you can prettify the Configuration outputs much more by just piping the output to jq. Don't use this if you're writing it to a file.
