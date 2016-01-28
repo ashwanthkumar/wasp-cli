@@ -39,6 +39,10 @@ Available Commands:
   get         Get the configuration in current path
   ls          List keys in the current path
   put         Put a value against a path
+  rmr         Delete a config key (recursively)
+
+Flags:
+  -h, --help   help for wasp
 
 Use "wasp [command] --help" for more information about a command.
 ```
@@ -54,4 +58,16 @@ $ cat foo.json | wasp put foo.bar.baz --stdin
 If you want to set the JSON as a nested configuration instead of a JSON value,
 ```
 $ cat foo.json | wasp put foo.bar.baz --stdin --raw
+```
+
+### Deleting config keys
+You can delete a configuration key using
+```
+$ wasp rmr foo.bar.baz
+Do you want to delete everything under foo.bar.baz? [yN]: y
+```
+
+If you're running deletes in a batch mode (strictly not advisable),
+```
+$ wasp rmr foo.bar.baz --yes
 ```
