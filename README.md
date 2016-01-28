@@ -40,3 +40,16 @@ Available Commands:
 
 Use "wasp [command] --help" for more information about a command.
 ```
+
+### Updating config keys
+You can use the `wasp put` command to update things, but you can do more than just update a value. You can use unix pipes `(|)` to update certain values. 
+
+For example if you want to pass a JSON string as a config value, 
+```
+$ cat foo.json | wasp put foo.bar.baz --stdin
+```
+
+If you want to set the JSON as a nested configuration instead of a JSON value,
+```
+$ cat foo.json | wasp put foo.bar.baz --stdin --raw
+```
